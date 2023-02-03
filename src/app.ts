@@ -16,4 +16,4 @@ server.get('/sales', getAllSales)
 server.delete('/sales/:id', deleteSale)
 server.get('/sales/ranking', getRanking)
 
-server.listen(4000, () => { console.log('Running...')})
+export default server;
