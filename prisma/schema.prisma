@@ -1,0 +1,32 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model pedals {
+  id    Int     @id(map: "pedals_pk") @default(autoincrement())
+  model String
+  brand String
+  value Decimal @db.Decimal
+  sales sales[]
+  stock stock[]
+}
+
+model sales {
+  id        Int      @id(map: "sales_pk") @default(autoincrement())
+  pedal_id  Int      
+  sale_date DateTime @default(dbgenerated("'2023-01-26'::date")) @db.Date
+  customer  String
+  pedals    pedals   @relation(fields: [pedal_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "sales_fk0")
+}
+
+model stock {
+  id       Int     @id(map: "stock_pk") @default(autoincrement())
+  pedal_id Int     
+  quantity Decimal @db.Decimal
+  pedals   pedals  @relation(fields: [pedal_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "stock_fk0")
+}
