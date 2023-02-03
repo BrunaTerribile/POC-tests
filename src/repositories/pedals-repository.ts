@@ -1,4 +1,4 @@
-import Pedal from "../protocols/pedal.js";
+import { PedalInput } from "../protocols/pedal.js";
 import { prisma } from "../database/database.js";
 
 async function getAll(){
@@ -13,7 +13,7 @@ async function getById(id: number){
     return data;
 }
 
-async function addPedal(pedal: Pedal){
+async function addPedal(pedal: PedalInput){
     await prisma.pedals.create({
         data: {
             model: pedal.model,

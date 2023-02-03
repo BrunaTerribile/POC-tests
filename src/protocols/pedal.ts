@@ -1,8 +1,11 @@
-type Pedal ={
+export type PedalEntity ={
+    id: number,
     model: string,
     brand: string,
     value: number,
     quantity: number
 }
 
-export default Pedal;
+export type PedalInput = Omit<PedalEntity, "id">
+
+export type Pedal = Omit<PedalEntity, "quantity">

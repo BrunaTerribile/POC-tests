@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Pedal from "../protocols/pedal.js";
+import { PedalInput } from "../protocols/pedal.js";
 import pedalService from "../services/pedal-service.js";
 
 async function getPedals(req: Request, res: Response){
@@ -15,7 +15,7 @@ async function getOne(req: Request, res: Response){
 }
 
 async function postPedal(req: Request, res: Response){
-    const newPedal = req.body as Pedal
+    const newPedal = req.body as PedalInput
     const { quantity } = req.body
 
     await pedalService.createPedal(newPedal, quantity)

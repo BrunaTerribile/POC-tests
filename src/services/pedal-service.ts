@@ -1,4 +1,4 @@
-import Pedal from "../protocols/pedal.js";
+import { PedalInput } from "../protocols/pedal.js";
 import pedalRepository from "../repositories/pedals-repository.js";
 import saleRepository from "../repositories/sales-repository.js";
 
@@ -12,7 +12,7 @@ async function getOnePedal(id: number) {
     return result;
 }
 
-async function createPedal(newPedal: Pedal, quantity: number){
+async function createPedal(newPedal: PedalInput, quantity: number){
     const result = await pedalRepository.addPedal(newPedal)
 
     const { id } = result
