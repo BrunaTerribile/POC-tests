@@ -1,6 +1,6 @@
-import { PedalInput } from "../protocols/pedal.js";
-import pedalRepository from "../repositories/pedals-repository.js";
-import saleRepository from "../repositories/sales-repository.js";
+import { PedalInput } from "../protocols/pedal";
+import pedalRepository from "../repositories/pedals-repository";
+import saleRepository from "../repositories/sales-repository";
 
 async function getAllPedals() {
     const result = await pedalRepository.getAll()

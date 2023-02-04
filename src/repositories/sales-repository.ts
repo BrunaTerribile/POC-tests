@@ -1,5 +1,4 @@
-import { decompressFromBase64 } from "@prisma/client/runtime/index.js";
-import { prisma } from "../database/database.js"
+import { prisma } from "../database/database"
 
 async function getAll(){
     const data = prisma.sales.findMany()

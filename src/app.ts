@@ -1,8 +1,8 @@
 import express from 'express';
-import { getOne, getPedals, postPedal } from './controllers/pedals-controller.js'
-import { postSale, getAllSales, getRanking, deleteSale } from './controllers/sales-controller.js';
-import validatePedal from './middlewares/validate-pedal-schema.js';
-import { PedalSchema } from './schemas/pedal-schema.js';
+import { getOne, getPedals, postPedal } from './controllers/pedals-controller'
+import { postSale, getAllSales, getRanking, deleteSale } from './controllers/sales-controller';
+import validatePedal from './middlewares/validate-pedal-schema';
+import { PedalSchema } from './schemas/pedal-schema';
 
 const server = express();
 server.use(express.json())

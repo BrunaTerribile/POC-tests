@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { PedalInput } from "../protocols/pedal.js";
-import pedalService from "../services/pedal-service.js";
+import { PedalInput } from "../protocols/pedal";
+import pedalService from "../services/pedal-service";
 
 async function getPedals(req: Request, res: Response){
     const pedals = await pedalService.getAllPedals()

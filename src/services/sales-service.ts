@@ -1,4 +1,4 @@
-import saleRepository from "../repositories/sales-repository.js"
+import saleRepository from "../repositories/sales-repository"
 
 async function createSale(id: number, customer: string) {
     saleRepository.updateStock(id)

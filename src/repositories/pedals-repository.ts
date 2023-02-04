@@ -1,5 +1,5 @@
-import { PedalInput } from "../protocols/pedal.js";
-import { prisma } from "../database/database.js";
+import { PedalInput } from "../protocols/pedal";
+import { prisma } from "../database/database";
 
 async function getAll(){
     const data = prisma.pedals.findMany()

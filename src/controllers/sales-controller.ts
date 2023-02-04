@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import saleService from "../services/sales-service.js";
+import saleService from "../services/sales-service";
 
 async function postSale(req: Request, res: Response) {
     const id = parseInt(req.params.id)
