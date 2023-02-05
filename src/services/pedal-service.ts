@@ -9,6 +9,10 @@ async function getAllPedals() {
 
 async function getOnePedal(id: number) {
     const result = await pedalRepository.getById(id)
+    if (!result) {
+        throw { message: "Fruit not found." }
+    }
+
     return result;
 }
 
